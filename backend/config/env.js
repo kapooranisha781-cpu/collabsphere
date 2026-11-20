@@ -1,3 +1,4 @@
+
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -12,11 +13,14 @@ const env = {
   clientUrl: process.env.CLIENT_URL,
 };
 
+// Required environment variables
 if (!env.mongoUri || !env.jwtSecret || !env.clientUrl) {
-  console.log("Please check your .env file. Required values are missing.");
-  process.exit(1);
+  throw new Error(
+    "Required environment variables are missing. Please check MONGO_URI, JWT_SECRET, and CLIENT_URL."
+  );
 }
 
+// Gemini is optional
 if (!env.geminiApiKey) {
   console.log("Gemini API key is missing. AI features will not work.");
 }
