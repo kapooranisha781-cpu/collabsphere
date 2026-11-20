@@ -15,28 +15,64 @@ import geminiRoutes from "./routes/geminiRoutes.js";
 import analyticsRoutes from "./routes/analyticsRoutes.js";
 import publicRoutes from "./routes/publicRoutes.js";
 
-import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+import {
+  notFound,
+  errorHandler,
+} from "./middleware/errorMiddleware.js";
 
 const app = express();
 
+// Security middleware
 app.use(
   helmet({
-    crossOriginResourcePolicy: { policy: "cross-origin" },
+    crossOriginResourcePolicy: {
+      policy: "cross-origin",
+    },
   })
 );
 
-app.use(cors({
-  origin: env.clientUrl,
-  credentials: true,
-}));
+// CORS
+app.use(
+  cors({
+    origin: env.clientUrl,
+    credentials: true,
+  })
+);
 
+// Body parser
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 
+// Development logging
 if (env.nodeEnv === "development") {
   app.use(morgan("dev"));
 }
 
+// MongoDB connection cache
+let dbConnection;
+
+const connectDatabase = async () => {
+  if (!dbConnection) {
+    dbConnection = connectDB().catch((error) => {
+      dbConnection = null;
+      throw error;
+    });
+  }
+
+  return dbConnection;
+};
+
+// Connect database before API requests
+app.use(async (req, res, next) => {
+  try {
+    await connectDatabase();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Health check
 app.get("/api/health", (req, res) => {
   res.json({
     success: true,
@@ -47,6 +83,7 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+// API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/notes", noteRoutes);
@@ -55,34 +92,12 @@ app.use("/api/gemini", geminiRoutes);
 app.use("/api/analytics", analyticsRoutes);
 app.use("/api/public", publicRoutes);
 
+// Error handling
 app.use(notFound);
 app.use(errorHandler);
 
-// Prevent multiple MongoDB connection attempts
-let dbConnection;
-
-const connectDatabase = async () => {
-  if (!dbConnection) {
-    dbConnection = connectDB();
-  }
-
-  await dbConnection;
-};
-
-// Vercel serverless handler
-const handler = async (req, res) => {
-  try {
-    await connectDatabase();
-    return app(req, res);
-  } catch (error) {
-    console.error("Server startup error:", error.message);
-
-    return res.status(500).json({
-      success: false,
-      message: "Database connection failed",
-    });
-  }
-};
+// Export Express app for Vercel
+export default app;
 
 // Local development
 if (env.nodeEnv === "development") {
@@ -96,8 +111,5 @@ if (env.nodeEnv === "development") {
     })
     .catch((error) => {
       console.error("Failed to start server:", error.message);
-      process.exitCode = 1;
     });
 }
-
-export default handler;
