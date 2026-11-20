@@ -1,0 +1,339 @@
+
+/* ==============================
+   THEME.CSS
+   COLORS + SHARED PRIMITIVES
+   BLACK + BRIGHT ICE BLUE
+============================== */
+
+:root {
+  /* Background Colors */
+  --bg: #02070A;
+  --bg-secondary: #060E14;
+  --card: #0A141B;
+  --card-hover: #10232D;
+
+  /* Borders */
+  --border: rgba(94, 200, 255, 0.18);
+  --border-hover: rgba(94, 200, 255, 0.42);
+
+  /* Primary Colors */
+  --primary: #5EC8FF;
+  --primary-hover: #8EDBFF;
+  --secondary: #2F8FCC;
+
+  /* Text Colors */
+  --text: #EAF4F8;
+  --muted: #A3BDCC;
+
+  /* Status Colors */
+  --danger: #F0616D;
+  --warning: #F5A524;
+
+  /* Radius */
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  /* Layout */
+  --sidebar-w: 250px;
+  --navbar-h: 64px;
+
+  /* Fonts */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Transition */
+  --transition: 0.18s ease;
+}
+
+/* ==============================
+   GLOBAL BASICS
+============================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 85% 0%,
+      rgba(47, 143, 204, 0.07),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #02070A,
+      #060E14 55%,
+      #02070A
+    );
+
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: rgba(94, 200, 255, 0.38);
+  color: #FFFFFF;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+
+  font-weight: 500;
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    opacity var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    #BDEBFF,
+    #4FB8F0
+  );
+
+  color: #02070A;
+  font-weight: 700;
+
+  border-color: rgba(220, 246, 255, 0.5);
+
+  box-shadow: 0 4px 16px rgba(70, 180, 240, 0.22);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    #D8F3FF,
+    #6CC8F8
+  );
+
+  box-shadow: 0 6px 22px rgba(80, 190, 250, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Secondary Button */
+
+.btn-secondary {
+  background: linear-gradient(
+    135deg,
+    #10232D,
+    #081116
+  );
+
+  border-color: var(--border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #102B3A;
+  border-color: var(--border-hover);
+}
+
+/* Ghost Button */
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  color: var(--text);
+  background: rgba(94, 200, 255, 0.07);
+}
+
+/* Danger Button */
+
+.btn-danger {
+  background: rgba(240, 97, 109, 0.12);
+  color: var(--danger);
+  border-color: rgba(240, 97, 109, 0.35);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger);
+  color: #FFFFFF;
+}
+
+/* Button Sizes */
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==============================
+   FORMS
+============================== */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+
+  background: linear-gradient(
+    135deg,
+    #081116,
+    #0A141B
+  );
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  outline: none;
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+}
+
+.input::placeholder {
+  color: #7894A5;
+}
+
+.input:focus {
+  background: #0A1921;
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px rgba(94, 200, 255, 0.16);
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ==============================
+   CARD
+============================== */
+
+.card {
+  background: linear-gradient(
+    145deg,
+    rgba(16, 35, 45, 0.88),
+    rgba(4, 9, 12, 0.96)
+  );
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(200, 240, 255, 0.08);
+}
+
+/* ==============================
+   PAGE HEADER
+============================== */
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+  color: var(--text);
+}
+
+.page-header p {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-h: 62px;
+    --sidebar-w: 0px;
+  }
+}

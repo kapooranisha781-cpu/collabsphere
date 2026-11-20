@@ -1,0 +1,366 @@
+
+/* ==============================
+   PUBLIC PROJECT PAGE
+   BLACK + BRIGHT ICE BLUE
+================================ */
+
+.public-project-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 80% 10%,
+      rgba(47, 143, 204, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #081116, #02070A 65%);
+  color: #EAF4F8;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 35px;
+}
+
+/* ==============================
+   NAVBAR
+================================ */
+
+.public-project-nav {
+  height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(3, 10, 14, 0.88);
+  border-bottom: 1px solid rgba(94, 200, 255, 0.18);
+  backdrop-filter: blur(16px);
+}
+
+.public-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #BDEBFF;
+  font-size: 21px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.6px;
+  transition: color 0.2s ease;
+}
+
+.public-brand:hover {
+  color: #FFFFFF;
+}
+
+.public-brand svg {
+  color: #5EC8FF;
+}
+
+.public-project-nav > span {
+  color: #8FB5CC;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ==============================
+   MAIN CONTENT
+================================ */
+
+.public-project-content {
+  width: min(100% - 40px, 1000px);
+  margin: 55px auto 0;
+}
+
+/* ==============================
+   PROJECT HERO
+================================ */
+
+.public-project-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 48px;
+  margin-bottom: 38px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(94, 200, 255, 0.15),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #10232D,
+      #09151C 55%,
+      #050B0F
+    );
+  border: 1px solid rgba(94, 200, 255, 0.22);
+  border-radius: 22px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(189, 235, 255, 0.05);
+}
+
+.public-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(94, 200, 255, 0.3);
+  border-radius: 30px;
+  background: rgba(94, 200, 255, 0.1);
+  color: #72D0FF;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.public-project-hero h1 {
+  margin: 0 0 16px;
+  color: #F0F8FC;
+  font-family: inherit;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.public-project-hero p {
+  max-width: 700px;
+  margin: 0 0 22px;
+  color: #B0C7D3;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.public-project-hero small {
+  display: inline-block;
+  color: #8FB5CC;
+  font-size: 12px;
+}
+
+/* ==============================
+   SECTION TITLES
+================================ */
+
+.public-section-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 20px;
+}
+
+.public-section-title svg {
+  color: #5EC8FF;
+  flex-shrink: 0;
+}
+
+.public-section-title h2 {
+  margin: 0;
+  color: #EAF4F8;
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.public-section-title > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
+  height: 25px;
+  padding: 0 7px;
+  border-radius: 8px;
+  background: rgba(94, 200, 255, 0.12);
+  color: #72D0FF;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ==============================
+   README SECTION
+================================ */
+
+.public-readme {
+  padding: 30px;
+  margin-bottom: 38px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 35, 45, 0.8),
+      rgba(5, 11, 15, 0.94)
+    );
+  border: 1px solid rgba(94, 200, 255, 0.17);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.public-readme .public-section-title {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(94, 200, 255, 0.16);
+}
+
+/* ==============================
+   PUBLIC NOTES
+================================ */
+
+.public-notes-section {
+  margin-bottom: 40px;
+}
+
+.public-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.public-note {
+  padding: 25px 28px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(47, 143, 204, 0.09),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      #10212A,
+      #080F14
+    );
+  border: 1px solid rgba(94, 200, 255, 0.16);
+  border-radius: 16px;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.public-note:hover {
+  border-color: rgba(94, 200, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.public-note-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 17px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(94, 200, 255, 0.13);
+}
+
+.public-note-header h3 {
+  margin: 0;
+  color: #EAF4F8;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.public-note-header small {
+  flex-shrink: 0;
+  color: #8FB5CC;
+  font-size: 11px;
+}
+
+/* ==============================
+   EMPTY NOTES
+================================ */
+
+.public-empty {
+  padding: 35px 25px;
+  background: linear-gradient(
+    145deg,
+    rgba(16, 35, 45, 0.65),
+    rgba(5, 11, 15, 0.9)
+  );
+  border: 1px dashed rgba(94, 200, 255, 0.25);
+  border-radius: 15px;
+  color: #A3BDCC;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ==============================
+   FOOTER
+================================ */
+
+.public-footer {
+  padding: 25px 20px;
+  border-top: 1px solid rgba(94, 200, 255, 0.14);
+  color: #829EAD;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .public-project-nav {
+    height: 66px;
+    padding: 0 20px;
+  }
+
+  .public-brand {
+    font-size: 18px;
+  }
+
+  .public-project-content {
+    width: min(100% - 30px, 1000px);
+    margin-top: 30px;
+  }
+
+  .public-project-hero {
+    padding: 30px 25px;
+    border-radius: 18px;
+  }
+
+  .public-readme {
+    padding: 23px 20px;
+  }
+
+  .public-note {
+    padding: 22px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .public-project-nav > span {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .public-brand {
+    font-size: 16px;
+  }
+
+  .public-project-hero {
+    padding: 25px 20px;
+  }
+
+  .public-project-hero h1 {
+    font-size: 29px;
+  }
+
+  .public-project-hero p {
+    font-size: 13px;
+  }
+
+  .public-section-title h2 {
+    font-size: 16px;
+  }
+
+  .public-note-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .public-note-header small {
+    font-size: 10px;
+  }
+}

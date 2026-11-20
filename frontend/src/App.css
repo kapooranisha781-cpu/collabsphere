@@ -1,0 +1,151 @@
+
+/* ==============================
+   APP.CSS - GLOBAL RESET
+   BLACK + BRIGHT ICE BLUE
+============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background: #02070a;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #eaf4f8;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(47, 143, 204, 0.08),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #02070a,
+      #060e14 55%,
+      #02070a
+    );
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==============================
+   DEFAULT ELEMENTS
+============================== */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ==============================
+   SCROLLBAR
+============================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2f8fcc #060e14;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060e14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #5ec8ff,
+    #2f8fcc
+  );
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bdeaff;
+}
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+
+::selection {
+  background: rgba(94, 200, 255, 0.38);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #5ec8ff;
+  outline-offset: 3px;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+}

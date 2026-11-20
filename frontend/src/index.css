@@ -1,0 +1,175 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ==============================
+   INDEX.CSS - ROOT VARIABLES
+   BLACK + BRIGHT ICE BLUE
+============================== */
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #EAF4F8;
+  background: #02070A;
+
+  /* Background Colors */
+  --bg-main: #02070A;
+  --bg-card: #0A141B;
+  --bg-secondary: #060E14;
+  --bg-hover: #10232D;
+
+  /* Blue Theme */
+  --ice-blue: #5EC8FF;
+  --ice-light: #BDEBFF;
+
+  /* Text Colors */
+  --text-primary: #EAF4F8;
+  --text-secondary: #A3BDCC;
+  --text-muted: #7FA3B8;
+
+  /* Borders */
+  --border-color: rgba(94, 200, 255, 0.18);
+  --border-hover: rgba(94, 200, 255, 0.42);
+
+  /* Status Colors */
+  --success: #78C9A5;
+  --danger: #E98282;
+  --warning: #E7C47D;
+
+  /* Layout */
+  --navbar-h: 70px;
+  --sidebar-w: 250px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==============================
+   GLOBAL RESET
+============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background: var(--bg-main);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(47, 143, 204, 0.07),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #02070A,
+      #060E14 55%,
+      #02070A
+    );
+
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==============================
+   DEFAULT ELEMENTS
+============================== */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+
+::selection {
+  background: rgba(94, 200, 255, 0.38);
+  color: #FFFFFF;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ice-blue);
+  outline-offset: 3px;
+}
+
+/* ==============================
+   SCROLLBAR
+============================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2F8FCC #060E14;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060E14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #5EC8FF,
+    #2F8FCC
+  );
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BDEBFF;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-h: 62px;
+    --sidebar-w: 0px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+}

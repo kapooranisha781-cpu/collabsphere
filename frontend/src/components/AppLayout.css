@@ -1,0 +1,291 @@
+
+/* ==========================================
+   COLLABSPHERE - PREMIUM APP LAYOUT
+   BLACK + BRIGHT ICE BLUE
+========================================== */
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+
+  /* Space for fixed sidebar */
+  padding-left: 255px;
+
+  color: #EAF4F8;
+
+  background:
+    radial-gradient(
+      ellipse at 72% 5%,
+      rgba(94, 200, 255, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 100% 55%,
+      rgba(47, 143, 204, 0.12),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 12% 100%,
+      rgba(50, 150, 215, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #060E14 0%,
+      #03080B 48%,
+      #09131A 100%
+    );
+}
+
+/* Ambient Background Lighting */
+
+.app-layout::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(94, 200, 255, 0.09),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 35% 85%,
+      rgba(70, 150, 195, 0.07),
+      transparent 28%
+    );
+
+  opacity: 1;
+}
+
+/* Main Application Area */
+
+.app-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  position: relative;
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      ellipse at 85% 0%,
+      rgba(94, 200, 255, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 15% 65%,
+      rgba(47, 143, 204, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(6, 14, 20, 0.92),
+      rgba(3, 8, 11, 0.97) 65%,
+      rgba(8, 17, 23, 0.96)
+    );
+
+  transition: background 0.35s ease;
+}
+
+/* Main Content Area */
+
+.app-content {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+
+  padding: 34px;
+
+  position: relative;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(94, 200, 255, 0.09),
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 5% 75%,
+      rgba(47, 143, 204, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(6, 14, 20, 0.35),
+      rgba(3, 8, 11, 0.15)
+    );
+
+  animation: contentReveal 0.5s ease both;
+}
+
+/* Glowing Background Orbs */
+
+.app-content::before {
+  content: "";
+  position: absolute;
+
+  top: -100px;
+  right: 5%;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(94, 200, 255, 0.12) 0%,
+    rgba(47, 143, 204, 0.06) 38%,
+    transparent 72%
+  );
+
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app-content::after {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 15%;
+
+  width: 320px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(50, 150, 215, 0.08),
+    transparent 70%
+  );
+
+  filter: blur(25px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Page Animation */
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Selection */
+
+.app-layout ::selection {
+  background: rgba(94, 200, 255, 0.38);
+  color: #FFFFFF;
+}
+
+/* Scrollbar */
+
+.app-layout * {
+  scrollbar-width: thin;
+  scrollbar-color: #2F8FCC #060E14;
+}
+
+.app-layout *::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.app-layout *::-webkit-scrollbar-track {
+  background: #060E14;
+}
+
+.app-layout *::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #5EC8FF,
+    #2F8FCC
+  );
+
+  border-radius: 20px;
+}
+
+.app-layout *::-webkit-scrollbar-thumb:hover {
+  background: #BDEBFF;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .app-content {
+    padding: 26px;
+  }
+
+  .app-content::before {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* Mobile and Tablet Sidebar Drawer */
+
+@media (max-width: 900px) {
+  .app-layout {
+    padding-left: 0;
+  }
+
+  .app-main {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 22px 16px;
+  }
+
+  .app-content::before {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+  .app-content {
+    padding: 16px 12px;
+  }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .app-content {
+    animation: none;
+  }
+}

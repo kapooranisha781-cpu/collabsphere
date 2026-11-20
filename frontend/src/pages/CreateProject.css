@@ -1,0 +1,224 @@
+
+/* ==============================
+   CREATE PROJECT PAGE
+   BLACK + BRIGHT ICE BLUE
+================================ */
+
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  color: #a3bdcc;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.back-link:hover {
+  color: #5ec8ff;
+}
+
+/* Page header */
+.page-header {
+  margin-bottom: 26px;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #eaf4f8;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+
+.page-header p {
+  margin: 9px 0 0;
+  color: #9bb5c3;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Create form card */
+.create-form {
+  width: 100%;
+  max-width: 720px;
+  padding: 30px;
+  background: linear-gradient(
+    145deg,
+    rgba(16, 35, 45, 0.95),
+    rgba(4, 12, 17, 0.98) 75%
+  );
+  border: 1px solid rgba(94, 200, 255, 0.2);
+  border-radius: 17px;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(47, 143, 204, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.create-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(94, 200, 255, 0.55),
+    transparent
+  );
+}
+
+/* Form groups */
+.create-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.create-form .form-label {
+  margin-bottom: 10px;
+  color: #c2d6e2;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Inputs */
+.create-form .input {
+  width: 100%;
+  padding: 13px 15px;
+  background: rgba(2, 9, 13, 0.8);
+  border: 1px solid rgba(94, 200, 255, 0.2);
+  border-radius: 10px;
+  outline: none;
+  color: #eaf4f8;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  transition: all 0.25s ease;
+}
+
+.create-form .input::placeholder {
+  color: #718b99;
+}
+
+.create-form .input:hover {
+  border-color: rgba(94, 200, 255, 0.4);
+}
+
+.create-form .input:focus {
+  border-color: #5ec8ff;
+  box-shadow: 0 0 0 3px rgba(94, 200, 255, 0.11);
+  background: rgba(7, 20, 28, 0.95);
+}
+
+.create-form textarea.input {
+  min-height: 115px;
+  resize: vertical;
+}
+
+/* Character count */
+.create-form .char-count {
+  align-self: flex-end;
+  margin-top: 7px;
+  color: #8fb5cc;
+  font-size: 11px;
+}
+
+/* Form actions */
+.create-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(94, 200, 255, 0.15);
+}
+
+.create-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 125px;
+  padding: 11px 19px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Cancel button */
+.create-actions .btn-secondary {
+  background: rgba(94, 200, 255, 0.06);
+  border: 1px solid rgba(94, 200, 255, 0.23);
+  color: #bdeaff;
+}
+
+.create-actions .btn-secondary:hover {
+  background: rgba(94, 200, 255, 0.13);
+  border-color: rgba(94, 200, 255, 0.45);
+  color: #eaf4f8;
+}
+
+/* Create button */
+.create-actions .btn-primary {
+  background: linear-gradient(110deg, #5ec8ff, #a8e4ff);
+  border: 1px solid #5ec8ff;
+  color: #031018;
+}
+
+.create-actions .btn-primary:hover:not(:disabled) {
+  background: linear-gradient(110deg, #8cdbff, #d0f1ff);
+  border-color: #a8e4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(94, 200, 255, 0.2);
+}
+
+.create-actions .btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-form {
+    padding: 24px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-form {
+    padding: 19px;
+  }
+
+  .page-header h1 {
+    font-size: 21px;
+  }
+
+  .page-header p {
+    font-size: 12px;
+  }
+
+  .create-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .create-actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,207 @@
+
+/* ==========================================
+   COLLABSPHERE - PROJECT CARD
+   DEEP BLACK + BRIGHT ICE BLUE
+========================================== */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 190px;
+  padding: 22px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(94, 200, 255, 0.10),
+      transparent 55%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(16, 35, 45, 0.90),
+      rgba(5, 13, 18, 0.96),
+      rgba(3, 8, 11, 0.98)
+    );
+
+  border: 1px solid rgba(94, 200, 255, 0.25);
+  border-radius: 17px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(189, 235, 255, 0.08);
+
+  text-decoration: none;
+  color: #EAF4F8;
+
+  transition: all 0.3s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(94, 200, 255, 0.85),
+    rgba(189, 235, 255, 0.65),
+    transparent
+  );
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(94, 200, 255, 0.65);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.48),
+    0 0 22px rgba(94, 200, 255, 0.16);
+}
+
+/* Project Header */
+
+.pc-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pc-top h3 {
+  margin: 0;
+
+  color: #F0F8FC;
+
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+/* Project Badge */
+
+.pc-badge {
+  flex-shrink: 0;
+
+  padding: 5px 11px;
+
+  border: 1px solid rgba(94, 200, 255, 0.35);
+  border-radius: 20px;
+
+  background: rgba(94, 200, 255, 0.10);
+
+  color: #BDEBFF;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.pc-owner {
+  background: rgba(94, 200, 255, 0.19);
+
+  border-color: rgba(94, 200, 255, 0.55);
+
+  color: #EAF8FF;
+}
+
+/* Project Description */
+
+.pc-desc {
+  margin: 0;
+
+  color: #B3C9D5;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  flex: 1;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* Project Metadata */
+
+.pc-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(94, 200, 255, 0.17);
+}
+
+.pc-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #A3BDCC;
+
+  font-size: 12px;
+}
+
+.pc-meta svg {
+  color: #5EC8FF;
+}
+
+.pc-meta .pc-public {
+  color: #BDEBFF;
+}
+
+/* Owner Information */
+
+.pc-owner-line {
+  color: #8FB5CC;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  margin-top: -8px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 19px;
+    gap: 15px;
+  }
+
+  .pc-top h3 {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .project-card {
+    min-height: auto;
+    padding: 17px;
+  }
+
+  .pc-meta {
+    gap: 10px;
+  }
+
+  .pc-meta span {
+    font-size: 11px;
+  }
+}

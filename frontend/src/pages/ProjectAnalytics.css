@@ -1,0 +1,409 @@
+
+/* =========================================
+   PROJECT ANALYTICS
+   DEEP BLACK + BRIGHT ICE BLUE
+========================================= */
+
+.analytics-page {
+  width: 100%;
+  min-width: 0;
+  color: #EAF4F8;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.analytics-page .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.analytics-page .page-header h1 {
+  margin: 0 0 9px;
+  color: #EAF4F8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.analytics-page .page-header h1 span {
+  color: #5EC8FF;
+}
+
+.analytics-page .page-header p {
+  margin: 0;
+  color: #A3BDCC;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.analytics-header-icon {
+  color: #5EC8FF;
+  padding: 12px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(
+    145deg,
+    rgba(94, 200, 255, 0.17),
+    rgba(5, 15, 22, 0.85)
+  );
+  border: 1px solid rgba(94, 200, 255, 0.30);
+  border-radius: 13px;
+  box-shadow: 0 0 18px rgba(94, 200, 255, 0.10);
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.analytics-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+/* =========================================
+   ANALYTICS MAIN GRID
+========================================= */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(270px, 0.9fr);
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 22px;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.analytics-page .card {
+  min-width: 0;
+  padding: 23px;
+  background: linear-gradient(
+    145deg,
+    rgba(13, 29, 39, 0.96),
+    rgba(4, 11, 16, 0.98)
+  );
+  border: 1px solid rgba(94, 200, 255, 0.19);
+  border-radius: 17px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(189, 235, 255, 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.analytics-page .card:hover {
+  border-color: rgba(94, 200, 255, 0.40);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.38),
+    0 0 18px rgba(94, 200, 255, 0.06);
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.analytics-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.analytics-section-heading h2,
+.member-stats-card h2 {
+  margin: 0 0 7px;
+  padding-left: 12px;
+  border-left: 3px solid #5EC8FF;
+  color: #EAF4F8;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.analytics-section-heading p,
+.analytics-subtitle {
+  margin: 0;
+  padding-left: 15px;
+  color: #A3BDCC;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ACTIVITY CHART
+========================================= */
+
+.analytics-chart-card {
+  min-height: 320px;
+}
+
+.activity-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 16px;
+  height: 205px;
+  padding: 12px 8px 0;
+  border-bottom: 1px solid rgba(94, 200, 255, 0.22);
+}
+
+.chart-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  height: 100%;
+  min-width: 0;
+}
+
+.chart-column strong {
+  color: #EAF4F8;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chart-bar-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: min(100%, 42px);
+  height: 145px;
+  overflow: hidden;
+  background: rgba(94, 200, 255, 0.06);
+  border: 1px solid rgba(94, 200, 255, 0.13);
+  border-radius: 8px 8px 3px 3px;
+}
+
+.chart-bar {
+  width: 100%;
+  min-height: 5px;
+  background: linear-gradient(
+    180deg,
+    #BDEBFF 0%,
+    #5EC8FF 55%,
+    #2F8FCC 100%
+  );
+  border-radius: 7px 7px 2px 2px;
+  box-shadow: 0 0 12px rgba(94, 200, 255, 0.22);
+  transition: height 0.4s ease;
+}
+
+.chart-column span {
+  color: #C2D6E2;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================
+   NO DATA MESSAGE
+========================================= */
+
+.analytics-no-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  margin: 0;
+  color: #A3BDCC;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* =========================================
+   MEMBER CONTRIBUTIONS
+========================================= */
+
+.member-stats-card {
+  min-height: 320px;
+}
+
+.member-stats-card .analytics-subtitle {
+  margin-bottom: 24px;
+}
+
+.member-stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.member-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(94, 200, 255, 0.09),
+    rgba(5, 14, 20, 0.72)
+  );
+  border: 1px solid rgba(94, 200, 255, 0.17);
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.member-stat-row:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(94, 200, 255, 0.15),
+    rgba(8, 22, 30, 0.9)
+  );
+  border-color: rgba(94, 200, 255, 0.40);
+}
+
+.member-stat-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #BDEBFF, #5EC8FF);
+  border: 1px solid rgba(189, 235, 255, 0.55);
+  color: #031019;
+  font-size: 15px;
+  font-weight: 750;
+  box-shadow: 0 0 12px rgba(94, 200, 255, 0.17);
+}
+
+.member-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.member-stat-info strong {
+  overflow: hidden;
+  color: #EAF4F8;
+  font-size: 14px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.member-stat-info span {
+  color: #A3BDCC;
+  font-size: 12px;
+}
+
+/* =========================================
+   RECENT ACTIVITY
+========================================= */
+
+.analytics-recent-card {
+  margin-bottom: 20px;
+}
+
+.analytics-recent-card .analytics-section-heading {
+  padding-bottom: 17px;
+  border-bottom: 1px solid rgba(94, 200, 255, 0.17);
+}
+
+.analytics-view-link {
+  flex-shrink: 0;
+  color: #5EC8FF;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.analytics-view-link:hover {
+  color: #BDEBFF;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1050px) {
+  .analytics-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-grid {
+    grid-template-columns: minmax(0, 1.3fr) minmax(250px, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-chart-card,
+  .member-stats-card {
+    min-height: auto;
+  }
+
+  .activity-chart {
+    height: 190px;
+  }
+}
+
+@media (max-width: 520px) {
+  .analytics-page .page-header {
+    align-items: flex-start;
+  }
+
+  .analytics-header-icon {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+  }
+
+  .analytics-stats {
+    gap: 11px;
+  }
+
+  .analytics-page .card {
+    padding: 17px;
+  }
+
+  .activity-chart {
+    gap: 8px;
+    padding-inline: 2px;
+  }
+
+  .chart-bar-track {
+    width: min(100%, 30px);
+  }
+
+  .chart-column span {
+    font-size: 10px;
+  }
+
+  .analytics-section-heading {
+    align-items: flex-start;
+  }
+
+  .analytics-view-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .analytics-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-recent-card .analytics-section-heading {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,216 @@
+
+/* ==========================================
+   COLLABSPHERE - EMPTY STATE
+   DEEP BLACK + BRIGHT ICE BLUE
+========================================== */
+
+.empty-state {
+  width: 100%;
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 42px 24px;
+  margin: 12px 0;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(94, 200, 255, 0.09),
+      transparent 68%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(16, 35, 45, 0.82),
+      rgba(3, 8, 11, 0.92)
+    );
+
+  border: 1px solid rgba(94, 200, 255, 0.17);
+  border-radius: 18px;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+/* Decorative Top Line */
+
+.empty-state::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 30%;
+
+  width: 40%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #5EC8FF,
+    #BDEBFF,
+    transparent
+  );
+
+  opacity: 0.75;
+}
+
+/* Background Glow */
+
+.empty-state::after {
+  content: "";
+
+  position: absolute;
+  width: 200px;
+  height: 200px;
+
+  top: -110px;
+  right: -90px;
+
+  background: radial-gradient(
+    circle,
+    rgba(94, 200, 255, 0.12),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+/* Icon Container */
+
+.empty-icon {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 23px;
+
+  color: #5EC8FF;
+
+  background: linear-gradient(
+    145deg,
+    rgba(94, 200, 255, 0.19),
+    rgba(47, 143, 204, 0.06)
+  );
+
+  border: 1px solid rgba(94, 200, 255, 0.28);
+  border-radius: 22px;
+
+  box-shadow:
+    0 0 30px rgba(94, 200, 255, 0.11),
+    inset 0 0 18px rgba(94, 200, 255, 0.05);
+
+  transition: all 0.35s ease;
+}
+
+.empty-icon svg {
+  stroke-width: 1.6;
+  filter: drop-shadow(0 0 7px rgba(94, 200, 255, 0.35));
+}
+
+/* Icon Hover */
+
+.empty-state:hover .empty-icon {
+  transform: translateY(-5px) rotate(-3deg);
+
+  border-color: rgba(94, 200, 255, 0.58);
+
+  box-shadow:
+    0 0 35px rgba(94, 200, 255, 0.20),
+    inset 0 0 20px rgba(94, 200, 255, 0.08);
+}
+
+/* Heading */
+
+.empty-state h3 {
+  margin: 0 0 10px;
+
+  color: #EAF4F8;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  letter-spacing: -0.35px;
+}
+
+/* Description */
+
+.empty-state p {
+  max-width: 360px;
+
+  margin: 0;
+
+  color: #A3BDCC;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+/* Action Button Area */
+
+.empty-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+  margin-top: 24px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .empty-state {
+    min-height: 230px;
+    padding: 34px 18px;
+    border-radius: 15px;
+  }
+
+  .empty-icon {
+    width: 66px;
+    height: 66px;
+    border-radius: 19px;
+  }
+
+  .empty-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .empty-state h3 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-state {
+    min-height: 210px;
+    padding: 28px 15px;
+  }
+
+  .empty-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+  }
+
+  .empty-state h3 {
+    font-size: 16px;
+  }
+
+  .empty-state p {
+    font-size: 12px;
+  }
+}

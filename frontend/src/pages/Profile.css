@@ -1,0 +1,245 @@
+
+/* =========================================
+   PROFILE PAGE
+   DEEP BLACK + BRIGHT ICE BLUE
+========================================= */
+
+.profile-page {
+  width: 100%;
+  min-width: 0;
+  color: #EAF4F8;
+}
+
+/* Header */
+
+.profile-page .page-header {
+  margin-bottom: 28px;
+}
+
+.profile-page .page-header h1 {
+  margin: 0 0 9px;
+  color: #EAF4F8;
+  font-size: clamp(25px, 3vw, 33px);
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+
+.profile-page .page-header p {
+  margin: 0;
+  color: #A3BDCC;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Profile Card */
+
+.profile-card {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 36px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(94, 200, 255, 0.12),
+      transparent 44%
+    ),
+    linear-gradient(145deg, #0D1B24, #050C11);
+  border: 1px solid rgba(94, 200, 255, 0.20);
+  border-radius: 18px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.30),
+    0 0 25px rgba(94, 200, 255, 0.04);
+}
+
+/* Avatar */
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 19px;
+  border: 2px solid rgba(94, 200, 255, 0.48);
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    #16435A,
+    #091722
+  );
+  color: #D9F3FF;
+  font-size: 38px;
+  font-weight: 750;
+  box-shadow:
+    0 0 0 7px rgba(94, 200, 255, 0.06),
+    0 10px 30px rgba(0, 0, 0, 0.30),
+    0 0 24px rgba(94, 200, 255, 0.10);
+}
+
+.profile-card > h2 {
+  margin: 0 0 7px;
+  color: #EAF4F8;
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.profile-role {
+  display: inline-block;
+  margin: 0 0 30px;
+  padding: 6px 13px;
+  border: 1px solid rgba(94, 200, 255, 0.25);
+  border-radius: 30px;
+  background: rgba(94, 200, 255, 0.09);
+  color: #7BD3FF;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.4px;
+}
+
+/* Profile Details */
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 19px;
+  background: linear-gradient(
+    135deg,
+    rgba(2, 8, 12, 0.75),
+    rgba(9, 24, 33, 0.75)
+  );
+  border: 1px solid rgba(94, 200, 255, 0.15);
+  border-radius: 13px;
+  text-align: left;
+}
+
+.profile-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 10px;
+  border-bottom: 1px solid rgba(94, 200, 255, 0.12);
+}
+
+.profile-detail-row:last-child {
+  border-bottom: none;
+}
+
+.profile-detail-row > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #A3BDCC;
+  font-size: 13px;
+}
+
+.profile-detail-row > span svg {
+  color: #5EC8FF;
+}
+
+.profile-detail-row strong {
+  max-width: 58%;
+  overflow-wrap: anywhere;
+  color: #EAF4F8;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Actions */
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 25px;
+}
+
+.profile-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 43px;
+  padding: 11px 19px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.profile-actions .btn-secondary {
+  background: linear-gradient(135deg, #132C3A, #091720);
+  border-color: rgba(94, 200, 255, 0.25);
+  color: #D9F3FF;
+}
+
+.profile-actions .btn-secondary:hover {
+  background: linear-gradient(135deg, #19435A, #0D202C);
+  border-color: rgba(94, 200, 255, 0.55);
+  transform: translateY(-2px);
+}
+
+.profile-actions .btn-danger {
+  background: rgba(229, 91, 105, 0.08);
+  border-color: rgba(229, 91, 105, 0.28);
+  color: #FF9DA7;
+}
+
+.profile-actions .btn-danger:hover {
+  background: rgba(229, 91, 105, 0.16);
+  border-color: rgba(229, 91, 105, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .profile-card {
+    padding: 25px 17px;
+  }
+
+  .profile-avatar {
+    width: 84px;
+    height: 84px;
+    font-size: 32px;
+  }
+
+  .profile-card > h2 {
+    font-size: 21px;
+  }
+
+  .profile-details {
+    padding: 12px;
+  }
+
+  .profile-detail-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 7px;
+  }
+
+  .profile-detail-row strong {
+    max-width: 100%;
+    padding-left: 28px;
+    text-align: left;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+
+  .profile-actions .btn {
+    width: 100%;
+  }
+}

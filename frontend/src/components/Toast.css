@@ -1,0 +1,183 @@
+
+/* ==========================================
+   COLLABSPHERE - TOAST NOTIFICATIONS
+   DEEP BLACK + BRIGHT ICE BLUE
+========================================== */
+
+/* Toast Container */
+
+.toast-container {
+  position: fixed;
+  top: 85px;
+  right: 24px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 12px;
+
+  width: min(380px, calc(100vw - 32px));
+
+  pointer-events: none;
+}
+
+/* Base Toast */
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 15px 16px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(94, 200, 255, 0.10),
+      transparent 60%
+    ),
+    linear-gradient(
+      145deg,
+      #10232D,
+      #060E14 70%,
+      #03080B
+    );
+
+  border: 1px solid rgba(94, 200, 255, 0.22);
+  border-radius: 12px;
+
+  color: #EAF4F8;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.45),
+    0 0 16px rgba(94, 200, 255, 0.06);
+
+  pointer-events: auto;
+
+  animation: toast-enter 0.3s ease both;
+}
+
+/* Toast Icon */
+
+.toast-icon {
+  flex-shrink: 0;
+}
+
+/* Message */
+
+.toast-message {
+  flex: 1;
+  min-width: 0;
+
+  color: #C2D6E2;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+/* Success */
+
+.toast-success {
+  border-left: 3px solid #62D6A5;
+}
+
+.toast-success .toast-icon {
+  color: #62D6A5;
+}
+
+/* Error */
+
+.toast-error {
+  border-left: 3px solid #F58B94;
+}
+
+.toast-error .toast-icon {
+  color: #F58B94;
+}
+
+/* Info */
+
+.toast-info {
+  border-left: 3px solid #5EC8FF;
+}
+
+.toast-info .toast-icon {
+  color: #5EC8FF;
+}
+
+/* Close Button */
+
+.toast-close {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #8FB5CC;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.toast-close:hover {
+  background: rgba(94, 200, 255, 0.13);
+
+  color: #EAF4F8;
+}
+
+/* Entry Animation */
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .toast-container {
+    top: 75px;
+    right: 16px;
+    width: calc(100vw - 32px);
+  }
+
+  .toast {
+    padding: 13px;
+    gap: 10px;
+  }
+
+  .toast-message {
+    font-size: 12px;
+  }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+}
